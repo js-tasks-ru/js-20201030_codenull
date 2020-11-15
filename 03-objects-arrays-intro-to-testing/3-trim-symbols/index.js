@@ -6,4 +6,23 @@
  */
 export function trimSymbols(string, size) {
 
+  if(!string) return "";
+
+  let i = 0;
+  let trimString = "";
+  let buffer     = "";
+  let curentChar = "";
+
+  do{
+    if(curentChar !== string[i]){
+      curentChar = string[i];
+      trimString += buffer.slice(0, size);
+      buffer = "";
+    }
+
+    buffer += string[i];
+    i++;
+  } while(i <= string.length);
+
+  return trimString;
 }
