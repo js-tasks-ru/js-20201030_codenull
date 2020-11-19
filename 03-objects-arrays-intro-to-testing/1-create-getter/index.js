@@ -5,7 +5,7 @@
  */
 export function createGetter(path) {
 
-  let pathParts = path.split(".");
+  const pathParts = path.split(".");
 
   return function (obj) {
     let result = obj;
